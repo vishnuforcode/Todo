@@ -26,7 +26,7 @@ function Todo(props) {
        <p className='h4'>{props.text}</p>
         </div>
         <div className="col-lg-3">
-            <button onClick={()=> {navigate('/updateTodo')}} className='btn btn-primar mx-2 my-2' style={{backgroundColor:'#94A378'}}>Edit</button>
+            <button onClick={()=> {navigate(`/updateTodo/${props.id}`)}} className='btn btn-primar mx-2 my-2' style={{backgroundColor:'#94A378'}}>Edit</button>
             <button onClick={()=> {deleteTodo(props.id)}} className='btn btn-dangr mx-2 my-2' style={{backgroundColor:'#D1855C'}}> <i className="fa-thin fa-trash-can"></i>Delete</button>
 
         </div>

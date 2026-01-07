@@ -5,11 +5,12 @@ function Navbar() {
   return (
    <>
    
-   <div className="container">
+   <div className="container-fluid" style={{backgroundColor:'#2D3C59'}}>
+   <div className="container " >
 
-<div className="row text-center">
-   <nav className=" col h2" style={{backgroundColor:'#2D3C59'}}>
-  <a className="navbar-brand" style={{color:'white'}}  >Todo</a>
+<div className="row text-center ">
+   <nav className=" col h2 " >
+  <NavLink className="navbar-brand m-2 " style={{color:'white'}}  >Todo</NavLink>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -26,6 +27,7 @@ function Navbar() {
   </div> */}
 </nav>
 </div>
+   </div>
    </div>
    
    </>

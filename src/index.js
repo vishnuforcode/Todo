@@ -3,19 +3,37 @@ import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Layout from './components/Layout';
+import Home from './Pages/Home';
+import UpdateTodo from './Pages/UpdateTodo';
+import { RouterProvider } from 'react-router-dom';
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element= {<Layout/>}>
+      <Route path='' element={<Home/>}/>
+      <Route path='updatetodo/:id' element={<UpdateTodo/>}/>
+      
+    </Route>
+  )
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <BrowserRouter>
+    
+<RouterProvider router={router}>
+
+
+    
     <App />
-    </BrowserRouter>
+    </RouterProvider>
+    
     </Provider>
   </React.StrictMode>
 );

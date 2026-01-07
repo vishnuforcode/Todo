@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTodo } from '../store/slices/TodoSlice'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 function AddTodo() {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     const [input , setInput]=  useState('')
     console.log(input)
@@ -14,7 +14,7 @@ function AddTodo() {
         e.preventDefault()
         dispatch(addTodo(input))
         setInput('')
-        navigate('/home');
+        // navigate('/home');
     }
 
   return (

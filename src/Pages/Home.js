@@ -1,8 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
 import Todo from '../components/Todo'
 import {  useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+
 import AddTodo from './AddTodo'
 
 
@@ -13,7 +12,6 @@ function Home() {
 
   return (
   <>
-  <Navbar/>
 
   <div className="container text-center my-3">
     <AddTodo/>
@@ -26,6 +24,7 @@ function Home() {
             todosArray.map((todoi)=> (
                 <Todo key={todoi.id} id={todoi.id} text={todoi.text} />
             ))
+
           }
         </div>
     </div>
