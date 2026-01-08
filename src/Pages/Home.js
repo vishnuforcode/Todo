@@ -18,7 +18,9 @@ function Home() {
   </div>
 
   <div className="container-fluid my-1 " >
-    <div className="container" style={{border:'1px solid'}}>
+    <div className="container" style={{}}>
+      <div className="row">
+        <div className="col-lg-12 col-md-12 col-sm-6">
         <div className="todo">
           {
             todosArray.map((todoi)=> (
@@ -26,6 +28,8 @@ function Home() {
             ))
 
           }
+        </div>
+        </div>
         </div>
     </div>
   </div>

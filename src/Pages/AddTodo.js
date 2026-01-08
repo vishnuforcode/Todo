@@ -7,7 +7,7 @@ function AddTodo() {
     // const navigate = useNavigate()
 
     const [input , setInput]=  useState('')
-    console.log(input)
+    // console.log(input)
 
     const dispatch = useDispatch()
     const addNewTodo=(e)=>{
@@ -27,24 +27,24 @@ function AddTodo() {
             <form 
             onSubmit={addNewTodo}
             
-            className='form   '>
+            className='form '>
             <input 
             className='input p-2 '
             style={{borderRadius:'5px' , border:'none'}}
             value={input}
             type="text" 
-            placeholder='type task'
+            placeholder='Task'
             onChange={(e)=> setInput(e.target.value)} />
 
+              {
+   input?  <button type="submit" className='btn btn-primary ms-2 ' enabled >Submit</button> : <button type="submit" className='btn btn-primary ms-2  ' disabled >Submit</button> 
+              }
+            
             
             </form>
 
             </div>
-            <div className="col">
-              {
-   input?  <button type="submit" className='btn btn-primary ' enabled >Submit</button> : <button type="submit" className='btn btn-primary ' disabled >Submit</button> 
-}
-            </div>
+           
 
             </div>
         </div>

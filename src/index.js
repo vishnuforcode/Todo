@@ -6,11 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import Layout from './components/Layout';
 import Home from './Pages/Home';
 import UpdateTodo from './Pages/UpdateTodo';
 import { RouterProvider } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
