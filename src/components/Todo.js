@@ -29,12 +29,12 @@ function Todo(props) {
    <>
    <div className="container-fluid my-2 " style={{backgroundColor:'#948979' , borderRadius:'6px'}}>
     <div className="row justify-content-between  align-items-center">
-        <div className="col-lg-7 col-12">
+        <div className="  col-sm-5 col-md-5 col-lg-7 ">
        <p className='h5 mt-2' style={{textTransform:'capitalize'}}>{incomingTask}</p>
         </div>
-        <div className="col-lg-3">
-            <button onClick={()=> {navigate(`/updateTodo/${props.id}`)}} className='btn btn-primar mx-2 my-2' style={{backgroundColor:'#FBEF76'}}> <FontAwesomeIcon icon={faPen}/> Edit</button>
-            <button onClick={()=> {deleteTodo(props.id)}} className='btn btn-dangr mx-2 my-2' style={{backgroundColor:'#FA5C5C'}}> <FontAwesomeIcon icon={faTrash} /> Delete</button>
+        <div className="col-sm-3 col-md-4 col-lg-5 d-flex justify-content-md-end justify-content-sm-center ">
+            <button onClick={()=> {navigate(`/updateTodo/${props.id}`)}} className='btn  mx-2 my-2' style={{backgroundColor:'#FBEF76'}}> <FontAwesomeIcon icon={faPen}/> Edit</button>
+            <button onClick={()=> {deleteTodo(props.id)}} className='btn mx-2 my-2' style={{backgroundColor:'#FA5C5C'}}> <FontAwesomeIcon icon={faTrash} /> Delete</button>
 
         </div>
     </div>
