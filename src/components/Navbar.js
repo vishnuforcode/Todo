@@ -9,8 +9,8 @@ function Navbar() {
    <div className="container " >
 
 <div className="row text-center ">
-   <nav className=" col-lg-3 col-12 h2 m-2  " >
-  <NavLink className="navbar-brand  " style={{color:'white'}}  >Todo</NavLink>
+   <nav className=" col-lg-3 col-12 h2 m-2 navbar navbar-expand-sm " >
+  <NavLink className="navbar-brand " style={{color:'white'}}  >Todo</NavLink>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -20,6 +20,8 @@ function Navbar() {
    </div>
    </div>
    
+
+
    </>
   )
 }

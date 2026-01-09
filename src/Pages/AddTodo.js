@@ -21,16 +21,16 @@ function AddTodo() {
     <>
     
     <div className="container-fluid">
-        <div className="container d-flex justify-content-center ">
+        <div className="container d-flex justify-content-start ">
           <div className="row">
-            <div className="col">
+            <div className="col " >
             <form 
             onSubmit={addNewTodo}
             
-            className='form '>
+            className='form  '>
             <input 
             className='input p-2 '
-            style={{borderRadius:'5px' , border:'none'}}
+            style={{borderRadius:'5px' , border:'none' , width:'200px'}}
             value={input}
             type="text" 
             placeholder='Task'
