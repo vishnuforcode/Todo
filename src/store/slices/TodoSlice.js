@@ -1,4 +1,4 @@
-import {createSlice, nanoid} from '@reduxjs/toolkit'
+import {createSlice, current, nanoid} from '@reduxjs/toolkit'
 
 
 const initialState  = {
@@ -12,7 +12,8 @@ const todoSlice = createSlice({
         addTodo :(state , action)=>{
             const todo = {
                 id : nanoid() ,
-                text : action.payload
+                text : action.payload ,
+                isCompleted: false
             }
             state.todos.push(todo)
             localStorage.setItem("todo" , JSON.stringify(state.todos))
@@ -25,7 +26,6 @@ const todoSlice = createSlice({
 
             localStorage.setItem('todo', JSON.stringify(state.todos))
         } ,
-
         updateTodo :(state ,action)=>{
             const id = action.payload.id
             const textRecieved = action.payload.text
@@ -40,10 +40,23 @@ const todoSlice = createSlice({
             
              
             
+        },
+
+        updateCompletion :(state , action)=>{
+                const id = action.payload 
+                const currentTodo = state.todos.find((todo) => todo.id === id )
+                const Completed = currentTodo.isCompleted
+
+                if(currentTodo){
+                    currentTodo.isCompleted = !Completed
+                }
+
+                localStorage.setItem("todo" ,JSON.stringify(state.todos))
+
         }
     }
 })
 
-export const {addTodo , removeTodo , updateTodo} = todoSlice.actions
+export const {addTodo , removeTodo , updateTodo , updateCompletion} = todoSlice.actions
 
 export default todoSlice.reducer

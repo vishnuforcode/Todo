@@ -9,7 +9,21 @@ function Home() {
 
   //  const [task , settask ] = useState(false)
     const todosArray = useSelector((state)=>state.todo.todos )
-    const count = todosArray.length
+    const count = todosArray.length 
+    
+    const completedCount  = todosArray.filter((todo)=> todo.isCompleted).length
+
+    // useEffect(()=>{
+    //   todosArray.forEach(element => {
+    //     console.log(element.isCompleted);
+    //     if((element.isCompleted) === true ){
+    //       setCompletedCount(completedCount++) 
+    //     }
+    //   });
+    // } ,[todosArray , count])
+
+    console.log(completedCount)
+    
     // const [todosArray , settodosArray] = useState(()=>{
     //   const todoFromLocal = localStorage.getItem("todo")
     //   if(todoFromLocal){
@@ -29,6 +43,8 @@ function Home() {
 // useEffect(()=>{
 //   settask(true)
 // } ,[])
+
+
   return (
   <>
 
@@ -44,7 +60,7 @@ function Home() {
       <p className="h6" style={{color:'#74a2c3c6'}}>Total : {count}</p>
     </div>
     <div className="col text-end me-2 ">
-      <p className="h6" style={{color:'#74a2c3c6'}}>Completed : {count}</p>
+      <p className="h6" style={{color:'#74a2c3c6'}}>Completed : {completedCount}</p>
     </div>
     
    
@@ -60,7 +76,7 @@ function Home() {
              todosArray.length>0  && (todosArray.map((todoi)=> (
              
               
-                <Todo key={todoi.id} id={todoi.id} text={todoi.text} total= {count} />
+                <Todo key={todoi.id} id={todoi.id} text={todoi.text} isCompleted={todoi.isCompleted} total= {count} />
             )))
 
              
@@ -70,7 +86,7 @@ function Home() {
                <div className="container ">
                 <div className="row ">
                   <div className="col text-center" style={{color:'gray'}}>
-                    Start with your Day !! 
+                    Start your Day !! 
                   </div>
                 </div>
                </div>)
