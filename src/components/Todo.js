@@ -62,7 +62,11 @@ function Todo(props) {
             <p className="h5 mt-2 p-2" style={{ textTransform: "capitalize" , textDecorationLine: props.isCompleted? ('line-through'):(null) }}>
               {incomingTask}
             </p>
-            <p className="daysLeft ms-3"  >days-left : <span style={{color:'#ed1919'}}>{daysLeft}</span></p>
+            {
+              props.toDate? ( <p className="daysLeft ms-3"  >days-left : <span className="h4" style={{color: daysLeft<3? ('#e70000') : ('#c1c7c8c9')  }}>{daysLeft}</span></p>):( <div></div>)
+            }
+           
+
             <hr className="p-0 m-0" />
           </div>
           {/* <hr className='p-0 m-0' style={{color: 'white'}} /> */}

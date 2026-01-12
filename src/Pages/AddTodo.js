@@ -16,17 +16,12 @@ function AddTodo() {
         e.preventDefault()
         dispatch(addTodo({text: input , from: Fromdate , to:toDate}))
         setInput('')
+        setFromDate()
+        setToDate()
         // navigate('/home');
     }
 
    
-
-  //   const d = new Date()
-  //   const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  //   const formattedDate = `${days[d.getDay()]}-${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()}`
-  // console.log(formattedDate);
-
-
 
    //date fields -----
    const [Fromdate ,setFromDate] = useState()
@@ -46,12 +41,12 @@ function AddTodo() {
     <div className="container-fluid">
         <div className="container  ">
           <div className="row mb-3 d-flex">
-            <div className="col-8"  >
+            <div className="col"  >
             <form 
             
             onSubmit={addNewTodo}
             
-            className='form  '>
+            className='form'>
             <input 
             className='input p-2 '
             style={{borderRadius:'5px' , border:'none' , width:'200px'}}
@@ -68,10 +63,10 @@ function AddTodo() {
               input? (
                 <div className='mt-3'>
                 <label htmlFor="" className='form-label' style={{color:'gray'}}>Form:</label>
-                <input type="date" className='form-control mb-2' style={{width:'200px'}} value={Fromdate} onChange={handleFromDate}/>
+                <input type="date" className='form-control mb-2' style={{width:'250px'}} value={Fromdate} onChange={handleFromDate}/>
 
                 <label htmlFor="" className='form-label' style={{color:'gray'}}>To:</label>
-                <input type="date" className='form-control mb-2' style={{width:'200px'}} value={toDate} onChange={handleToDate}/>
+                <input type="date" className='form-control mb-2' style={{width:'250px'}} value={toDate} onChange={handleToDate}/>
                 </div>
               ):(
                null 
