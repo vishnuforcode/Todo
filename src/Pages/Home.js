@@ -48,7 +48,7 @@ function Home() {
   return (
   <>
 
-  <div className="container text-center my-3">
+  <div className="container my-3">
     <AddTodo/>
 
   </div>
@@ -76,7 +76,7 @@ function Home() {
              todosArray.length>0  && (todosArray.map((todoi)=> (
              
               
-                <Todo key={todoi.id} id={todoi.id} text={todoi.text} isCompleted={todoi.isCompleted} total= {count} />
+                <Todo key={todoi.id} id={todoi.id} text={todoi.text} isCompleted={todoi.isCompleted} total= {count} fromDate={todoi.fromDate} toDate={todoi.toDate} />
             )))
 
              
@@ -85,7 +85,7 @@ function Home() {
             todosArray.length===0 &&(
                <div className="container ">
                 <div className="row ">
-                  <div className="col text-center" style={{color:'gray'}}>
+                  <div className="col text-center" style={{color:'white'}}>
                     Start your Day !! 
                   </div>
                 </div>
