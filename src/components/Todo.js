@@ -54,7 +54,7 @@ function Todo(props) {
   return (
     <>
       <div
-        className="container-fluid my-2 "
+        className="container-fluid my-2 shadow lg "
         style={{ backgroundColor: props.isCompleted? ("#57595bae") : ("#948979"), borderRadius: "6px" }}
       >
         <div className="row justify-content-between  align-items-center">
@@ -63,7 +63,11 @@ function Todo(props) {
               {incomingTask}
             </p>
             {
-              props.toDate? ( <p className="daysLeft ms-3"  >days-left : <span className="h4" style={{color: daysLeft<3? ('#e70000') : ('#c1c7c8c9')  }}>{daysLeft}</span></p>):( <div></div>)
+              props.toDate? ( <p className="daysLeft ms-3"  >days-left : {
+                props.isCompleted?( <span className="h6" style={{color:"green" }}>Completed</span>):(
+                <span className="h6" style={{color: daysLeft<3? ('red') : ('#c1c7c8c9')  }}>{daysLeft}</span>
+              )
+              }</p>):( <div></div>)
             }
            
 

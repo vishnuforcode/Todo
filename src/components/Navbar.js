@@ -1,29 +1,26 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-   <>
-   
-   <div className="container-fluid" style={{backgroundColor:'#222831'}}>
-   <div className="container " >
-
-<div className="row text-center ">
-   <nav className=" col-lg-3 col-12 h2 m-2 navbar navbar-expand-sm " >
-  <NavLink className="navbar-brand " style={{color:'white'}}  >Todo</NavLink>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
-  </button>
-
-</nav>
+    <>
+      <div className="container-fluid " style={{ backgroundColor: "#222831" }}>
+        <div className="container ">
+          <div className="row p-2 justify-content-center">
+            <div className="col p-3 ">
+              <Link to={'/'} className=" h2 text-decoration-none" style={{color:'white'}}>Todo</Link>
+            </div>
+            <div className="col-md-6 col-3 d-flex justify-content-end">
+              <div className="item  p-2 m-2 "><Link to={'/musicplayer'} className=" text-decoration-none " style={{color:'white'}}>Music player</Link>
 </div>
-   </div>
-   </div>
-   
-
-
-   </>
-  )
+              <Link to={'/album'} className=" text-decoration-none  p-2 m-2" style={{color:'white'}}>Album</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default Navbar
+export default Navbar;

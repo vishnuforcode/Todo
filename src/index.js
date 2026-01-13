@@ -12,13 +12,16 @@ import Home from './Pages/Home';
 import UpdateTodo from './Pages/UpdateTodo';
 import { RouterProvider } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MusicPlayer from './Pages/MusicPlayer';
+import Album from './Pages/Album';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element= {<Layout/>}>
       <Route path='' element={<Home/>}/>
       <Route path='updatetodo/:id' element={<UpdateTodo/>}/>
-      
+      <Route path='musicplayer' element={<MusicPlayer/>}/>
+      <Route path='album' element={<Album/>}/>
     </Route>
   )
 )
