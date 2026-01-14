@@ -6,13 +6,13 @@ import AddTodo from "./Pages/AddTodo";
 function App() {
   return (
   <>
-  <Routes>
+  {/* <Routes>
     
     <Route element={<Todo/>} path="/home/todos" />
     <Route element={<AddTodo/>} path="/home/addTodos" />
     <Route element={<Home/>} path="*" />
 
-  </Routes>
+  </Routes> */}
   
   </>
   );

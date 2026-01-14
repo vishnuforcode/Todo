@@ -63,10 +63,10 @@ function AddTodo() {
               input? (
                 <div className='mt-3'>
                 <label htmlFor="" className='form-label' style={{color:'gray'}}>Form:</label>
-                <input type="date" className='form-control mb-2' style={{width:'250px'}} value={Fromdate} onChange={handleFromDate}/>
+                <input type="date" placeholder='start date' className='form-control mb-2' style={{width:'250px'}} value={Fromdate} onChange={handleFromDate}/>
 
                 <label htmlFor="" className='form-label' style={{color:'gray'}}>To:</label>
-                <input type="date" className='form-control mb-2' style={{width:'250px'}} value={toDate} onChange={handleToDate}/>
+                <input type="date" placeholder='to date' className='form-control mb-2' style={{width:'250px'}} value={toDate} onChange={handleToDate}/>
                 </div>
               ):(
                null 
