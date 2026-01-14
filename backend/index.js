@@ -3,7 +3,7 @@ let cors = require('cors')
 
 let app = express()
 
-app.use(cors)
+app.use(cors())
 require('dotenv').config()
 
 
@@ -20,7 +20,7 @@ app.get("/home" , (req,res)=>{
 
 
 
-app.listen(process.env.PORT | '4000' , ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log("listening at 8000");
     
 })
