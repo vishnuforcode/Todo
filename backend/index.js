@@ -1,7 +1,6 @@
 let express = require('express')
 let cors = require('cors')
 
-const { config } = require('@fortawesome/fontawesome-svg-core')
 let app = express()
 
 app.use(cors)
