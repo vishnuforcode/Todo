@@ -2,9 +2,12 @@ let express = require('express')
 let cors = require('cors')
 
 let app = express()
+require('dotenv').config()
+const generateText = require('./GEmini_helper')
 
 app.use(cors())
-require('dotenv').config()
+
+app.use(express.json())
 
 
 
@@ -18,9 +21,29 @@ app.get("/home" , (req,res)=>{
 })
 
 
+app.post("/ai", async (req, res) => {
+  try {
+    const { input } = req.body
+    console.log(input);
+    
+
+    if (!input) {
+      return res.status(400).json({ error: "input is required" })
+    }
+
+    const response = await generateText(input)
+    
+    res.json({ response})
+  } catch (error) {
+    console.error(error)
+    res.status(400).json({ error: "AI failed" })
+  }
+})
+
+
 
 
 app.listen(process.env.PORT, ()=>{
-    console.log("listening at 8000");
+    console.log(`listening at ${process.env.PORT}`);
     
 })

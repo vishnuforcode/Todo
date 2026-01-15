@@ -11,11 +11,11 @@ function Navbar() {
             <div className="col p-3 ">
               <Link to={'/'} className=" h2 text-decoration-none" style={{color:'white'}}>Todo</Link>
             </div>
-            {/* <div className="col-md-6 col-3 d-flex justify-content-end">
+            <div className="col-md-6 col-3 d-flex justify-content-end">
               <div className="item  p-2 m-2 "><Link to={'/musicplayer'} className=" text-decoration-none " style={{color:'white'}}>Music player</Link>
 </div>
               <Link to={'/album'} className=" text-decoration-none  p-2 m-2" style={{color:'white'}}>Album</Link>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

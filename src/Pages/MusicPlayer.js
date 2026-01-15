@@ -1,38 +1,43 @@
 import React, { useState } from 'react'
-import { model } from '../Ai/Gemini_helper'
+import axios from 'axios'
+
 
 function MusicPlayer() {
-        // const [response , setresponse] = useState("")
-        const payload ={
-            "contents": [{
-                "parts":[{"test":"explain how api works"}]
+  const [userInput , setUserInput] = useState("")
+    const [aiRes , setaiRes]=useState("")
+    const handelClick = async()=>{
+        const res = await axios.post("http://localhost:8000/ai" ,
+          {
+            input : userInput
+          } 
+        )
 
-            }]
-        }
-    const testAi = async ()=>{
-        // const result = await model.generateContent(
-        //     "Generate greeting response for first api request "
-        // )
-        //     setresponse(result.response.text())
-        // console.log(result.response.text());
-        
-        let res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.REACT_APP_GEMINI_API_KEY}` ,{
-            method:"POST",
-            body: JSON.stringify(payload)
-        })
-
-        const response = await res.json()
-        console.log(response);
-        
-    }
-    
-    const handelClick=()=>{
-        testAi()
+        console.log(res)
+         setaiRes(res.data)  
+         console.log(aiRes) 
     }
   return (
     <>
-    this is music player
-      <button onClick={handelClick}>Click for response</button>
+    <div className="container-fluid">
+      <div className="container">
+        <div className="row text-center">
+            <p className='h2' style={{color:'white'}} >This is palyer</p>
+        </div>
+        <div className="row row-cols-2">
+          <div className="col">
+                <input type="text" placeholder='ask Gemini' value={userInput}  onChange={(e)=>{setUserInput(e.target.value)}}/>
+               <button className='btn btn-primary' onClick={handelClick}>Ask Ai</button>
+          </div>
+          <div className="col">
+              <textarea name="" id="" placeholder='response will be here'  value={aiRes}/> 
+          </div>
+        </div>
+      </div>
+    </div>
+{/*    
+
+      
+  
       {/* <p>{response}</p> */}
 
     </>
