@@ -10,7 +10,7 @@ function AiAssistant() {
       setLoading(true)
       e.preventDefault()
       try{
-        const res = await axios.post("https://todobackend-reoh.onrender.com/ai" ,
+        const res = await axios.post("https://todobackendwithai.onrender.com/ai" ,
           {
             input : userInput
           } 
