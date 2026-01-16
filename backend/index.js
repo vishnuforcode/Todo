@@ -28,6 +28,7 @@ app.post("/ai", async (req, res) => {
     
 
     if (!input) {
+      
       return res.status(400).json({ error: "input is required" })
     }
 

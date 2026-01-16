@@ -41,14 +41,14 @@ function Todo(props) {
   }
 
 
-  console.log(props.fromDate);
-  console.log(props.toDate);
+  // console.log(props.fromDate);
+  // console.log(props.toDate);
 
   const formattedFromDate = new Date(props.fromDate)
   const formattedToDate = new Date(props.toDate)
 
   const daysLeft = formattedToDate.getDate()- formattedFromDate.getDate()
-  console.log(daysLeft);
+  // console.log(daysLeft);
   
   
   return (
@@ -69,8 +69,9 @@ function Todo(props) {
               )
               }</p>):( <div></div>)
             }
+              <div  className="ms-3"><p style={{fontSize:'13px'}}>created at:{ props.fromDate? formattedFromDate.toLocaleDateString() : "today"}</p></div>
            
-
+          
             <hr className="p-0 m-0" />
           </div>
           {/* <hr className='p-0 m-0' style={{color: 'white'}} /> */}
@@ -111,7 +112,7 @@ function Todo(props) {
                 />
                 Done
               </button> 
-           
+                
               
 
              

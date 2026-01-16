@@ -12,7 +12,7 @@ import Home from './Pages/Home';
 import UpdateTodo from './Pages/UpdateTodo';
 import { RouterProvider } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import MusicPlayer from './Pages/MusicPlayer';
+import AiAssistant from './Pages/AiAssistant'
 import Album from './Pages/Album';
 
 const router = createBrowserRouter(
@@ -20,7 +20,7 @@ const router = createBrowserRouter(
     <Route path='/' element= {<Layout/>}>
       <Route path='' element={<Home/>}/>
       <Route path='updatetodo/:id' element={<UpdateTodo/>}/>
-      <Route path='musicplayer' element={<MusicPlayer/>}/>
+      <Route path='Aihelp' element={<AiAssistant/>}/>
       <Route path='album' element={<Album/>}/>
     </Route>
   )
