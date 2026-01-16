@@ -5,7 +5,9 @@ let app = express()
 require('dotenv').config()
 const generateText = require('./GEmini_helper')
 
-app.use(cors())
+app.use(cors({
+  origin: '*'
+}))
 
 app.use(express.json())
 
@@ -28,7 +30,7 @@ app.post("/ai", async (req, res) => {
     
 
     if (!input) {
-      
+
       return res.status(400).json({ error: "input is required" })
     }
 
