@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeTodo, updateTodo } from "../store/slices/TodoSlice";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,13 @@ import {updateCompletion} from '../store/slices/TodoSlice'
 
 function Todo(props) {
 
+    const formattedFromDate = new Date(props.fromDate)
+  const formattedToDate = new Date(props.toDate)
+  const currentDate = new Date()
+  useEffect(()=>{
+      
+  const daysLeft = Math.abs( formattedToDate.getDate()- currentDate.getDate())
+  } , [currentDate])
   
   // console.log(props.total);
   // const [ total , setTotal] = useState(props.total)
@@ -44,12 +51,10 @@ function Todo(props) {
   // console.log(props.fromDate);
   // console.log(props.toDate);
 
-  const formattedFromDate = new Date(props.fromDate)
-  const formattedToDate = new Date(props.toDate)
 
-  const daysLeft = formattedToDate.getDate()- formattedFromDate.getDate()
-  // console.log(daysLeft);
-  
+
+  console.log(currentDate.getDate())
+
   
   return (
     <>
