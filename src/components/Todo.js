@@ -9,14 +9,22 @@ import {updateCompletion} from '../store/slices/TodoSlice'
 
 function Todo(props) {
 
-    const formattedFromDate = new Date(props.fromDate)
+  const formattedFromDate = new Date(props.fromDate)
   const formattedToDate = new Date(props.toDate)
   const currentDate = new Date()
-  useEffect(()=>{
-      
-  const daysLeft = Math.abs( formattedToDate.getDate()- currentDate.getDate())
-  } , [currentDate])
-  
+
+
+  const oneDay = 1000 * 60 * 60 * 24;
+
+
+
+let daysLeft = Math.ceil(
+  (formattedToDate - currentDate) / oneDay
+);
+
+if (daysLeft < 0) daysLeft = 0; // overdue protection
+
+
   // console.log(props.total);
   // const [ total , setTotal] = useState(props.total)
   
