@@ -18,11 +18,14 @@ function Todo(props) {
 
 
 
-let daysLeft = Math.ceil(
-  (formattedToDate - currentDate) / oneDay
+  useEffect(()=>{
+      let daysLeft = Math.ceil(
+     (formattedToDate - currentDate) / oneDay
 );
 
 if (daysLeft < 0) daysLeft = 0; // overdue protection
+
+  }, [daysLeft])
 
 
   // console.log(props.total);
