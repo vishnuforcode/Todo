@@ -16,7 +16,9 @@ function Todo(props) {
 
   const oneDay = 1000 * 60 * 60 * 24;
 
-
+      let daysLeft = Math.ceil(
+     (formattedToDate - currentDate) / oneDay
+);
 
   useEffect(()=>{
       let daysLeft = Math.ceil(
@@ -25,7 +27,7 @@ function Todo(props) {
 
 if (daysLeft < 0) daysLeft = 0; // overdue protection
 
-  }, [daysLeft])
+  }, [formattedFromDate])
 
 
   // console.log(props.total);
@@ -85,7 +87,15 @@ if (daysLeft < 0) daysLeft = 0; // overdue protection
               )
               }</p>):( <div></div>)
             }
-              <div  className="ms-3"><p style={{fontSize:'13px'}}>created at:{ props.fromDate === currentDate?  "today" : formattedFromDate.toLocaleDateString() }</p></div>
+              <div  className="ms-3"><p style={{fontSize:'13px'}}>created at:
+                { 
+                props.fromDate? (
+                  
+                    props.fromDate === currentDate?  "today" : formattedFromDate.toLocaleDateString()
+                  
+                ):("today")
+              
+               }</p></div>
            
           
             <hr className="p-0 m-0" />
