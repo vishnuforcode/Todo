@@ -85,7 +85,7 @@ if (daysLeft < 0) daysLeft = 0; // overdue protection
               )
               }</p>):( <div></div>)
             }
-              <div  className="ms-3"><p style={{fontSize:'13px'}}>created at:{ props.fromDate? formattedFromDate.toLocaleDateString() : "today"}</p></div>
+              <div  className="ms-3"><p style={{fontSize:'13px'}}>created at:{ props.fromDate === currentDate?  "today" : formattedFromDate.toLocaleDateString() }</p></div>
            
           
             <hr className="p-0 m-0" />
