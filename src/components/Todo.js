@@ -83,7 +83,9 @@ if (daysLeft < 0) daysLeft = 0; // overdue protection
             {
               props.toDate? ( <p className="daysLeft ms-3"  >days-left : {
                 props.isCompleted?( <span className="h6" style={{color:"green" }}>Completed</span>):(
-                <span className="h6" style={{color: daysLeft<3? ('red') : ('#c1c7c8c9')  }}>{daysLeft}</span>
+                <span className="h6" style={{color: daysLeft<3? ('red') : ('#c1c7c8c9')  }}>
+                
+                {daysLeft< 0 ? (0): (daysLeft)}</span>
               )
               }</p>):( <div></div>)
             }
